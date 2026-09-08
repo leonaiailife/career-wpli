@@ -1,176 +1,91 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>理出自己｜女力職涯探索</title>
 <style>
-:root{--bg:#f5f0e7;--paper:#fffdf8;--ink:#29372f;--muted:#69746c;--g:#557b5c;--g2:#e2eddf;--gold:#c99b53;--rose:#efd9d3;--blue:#dcebef;--line:#ded8cc;--dark:#243129}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#fff8eb,transparent 35%),linear-gradient(145deg,#f5f0e7,#eaf1e8);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif}.app{min-height:100vh}
-header{position:sticky;top:0;z-index:30;background:#fffdf8ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:11px 15px;display:flex;gap:8px;align-items:center}.logo{font-weight:950}.grow{flex:1}.pill{background:var(--g2);border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800}
-.progress{height:7px;background:#e5e0d7}.progress div{height:100%;background:linear-gradient(90deg,var(--g),var(--gold));transition:.35s}
-main{max-width:850px;margin:auto;padding:24px 17px 105px}.card{background:#fffdf8;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 32px #29372f12;animation:rise .3s ease}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.eyebrow{font-size:12px;letter-spacing:.14em;font-weight:900;color:var(--g)}h1{font-size:34px;margin:9px 0 13px}h2{font-size:27px;margin:8px 0 12px}h3{margin:8px 0}p{line-height:1.75}.small{font-size:13px;color:var(--muted);line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.opt{position:relative;border:2px solid var(--line);border-radius:17px;background:white;padding:16px;text-align:left;min-height:76px;transition:.15s;user-select:none;-webkit-tap-highlight-color:transparent}.opt:active{transform:scale(.98)}.opt.selected{background:var(--g2);border-color:var(--g);box-shadow:0 0 0 3px #557b5c18}.opt.selected:after{content:"✓";position:absolute;right:11px;top:9px;background:var(--g);color:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-weight:900}.ico{font-size:25px;display:block;margin-bottom:5px}
-input,textarea{width:100%;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;outline:0}textarea{min-height:92px;resize:vertical}input:focus,textarea:focus{border-color:var(--g)}
-.btn{border:0;border-radius:14px;background:var(--g);color:#fff;padding:12px 16px;font-weight:900}.btn.secondary{background:#ebe7dd;color:var(--ink)}.btn.gold{background:var(--gold)}.btn:disabled{opacity:.42}
-.actions{display:flex;justify-content:space-between;gap:10px;margin-top:21px;flex-wrap:wrap}.notice{background:#f3eee2;border-radius:15px;padding:12px 14px;font-size:13px}.tags span,.badge{display:inline-block;background:#eee9df;border-radius:999px;padding:7px 10px;margin:4px;font-size:13px}.badge{background:#f2e2bd;font-weight:900}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{font-size:22px;display:block}.level{font-size:14px;font-weight:900}.scoreGuide{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.scoreChip{background:#fff8e8;border:1px solid #ead8b6;border-radius:999px;padding:6px 10px;font-weight:800;font-size:12px}.freeNote{background:#eef5eb;border:1px solid #d5e4d0;border-radius:15px;padding:12px 14px;margin:12px 0;font-size:14px}.mapBtn{position:relative}.mapPts{float:right;color:var(--gold);font-size:12px;font-weight:900}.bar{height:9px;background:#e7e2d9;border-radius:99px;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,var(--g),var(--gold));transition:.5s}
-.scene{background:linear-gradient(135deg,#eef4eb,#fff8ee);border-radius:18px;padding:17px;margin:15px 0}.scene b{font-size:17px}.flash{animation:flash .65s ease}@keyframes flash{0%{box-shadow:0 0 0 0 #c99b5366}100%{box-shadow:0 0 0 18px transparent}}
-.deck{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.energy{min-height:175px;perspective:900px}.energyInner{transition:transform .55s;transform-style:preserve-3d;min-height:155px}.energy.flipped .energyInner{transform:rotateY(180deg)}.face{backface-visibility:hidden;border:2px solid var(--line);border-radius:17px;padding:15px;min-height:155px;background:#fff}.back{position:absolute;inset:0;transform:rotateY(180deg);background:linear-gradient(145deg,#f0e0bf,#fff9ec);border-color:var(--gold)}.energyWrap{position:relative}.face b{font-size:18px}.cardIcon{font-size:40px;margin:10px 0}
-.scenario{min-height:135px}.lock{opacity:.5}.map{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.mapBtn{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;text-align:left;cursor:pointer}.mapBtn.done{background:var(--g2);border-color:var(--g)}.modal{position:fixed;inset:0;background:#1d292288;display:none;align-items:flex-end;z-index:60;padding:10px}.modal.show{display:flex}.modalBox{background:var(--paper);width:min(900px,100%);max-height:91vh;overflow:auto;border-radius:24px;padding:20px}
-.resultMap{width:100%;max-width:600px;margin:auto;background:linear-gradient(155deg,#fffaf0,#eaf2e8);padding:30px 25px;border-radius:28px;border:1px solid #d8d3c7;box-shadow:0 15px 40px #26352f18}.resultMap .hero{font-size:29px;font-weight:950}.resultMap .line{height:1px;background:#d8d3c7;margin:18px 0}.quote{font-size:21px;font-weight:900;line-height:1.65}.chapterTitle{font-weight:950;margin-top:16px;color:var(--g)}
-.toast{position:fixed;z-index:99;left:50%;bottom:24px;transform:translate(-50%,130px);background:var(--dark);color:#fff;padding:12px 17px;border-radius:999px;transition:.25s}.toast.show{transform:translate(-50%,0)}
-nav{position:fixed;bottom:0;left:0;right:0;z-index:25;background:#fffdf8f2;border-top:1px solid var(--line);backdrop-filter:blur(10px);display:flex;justify-content:center;gap:10px;padding:9px 14px calc(9px + env(safe-area-inset-bottom))}
-nav .btn{min-width:120px}
-@media(max-width:600px){h1{font-size:29px}h2{font-size:24px}.grid,.deck,.map{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.card{padding:19px}.deck{grid-template-columns:1fr 1fr}nav .btn{min-width:0;flex:1}.resultMap{padding:22px 18px}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans TC",sans-serif;color:#29372f;background:#f4f0e7}button,input,textarea{font:inherit}.top{position:sticky;top:0;z-index:10;background:#fffdf9;border-bottom:1px solid #ddd6c8}.topin{max-width:980px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:10px}.logo{font-weight:900;font-size:18px}.spacer{flex:1}.pill{background:#e3eddf;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:800}.progress{height:6px;background:#e7e1d6}.progress>div{height:100%;background:#557b5c;transition:.3s}main{max-width:980px;margin:auto;padding:28px 18px 110px}.hero,.card{background:#fffdf9;border:1px solid #ddd6c8;border-radius:25px;box-shadow:0 10px 30px #29372f12}.hero{padding:34px;margin-bottom:16px}.hero h1{font-size:40px;margin:8px 0}.hero p{line-height:1.8;color:#69746c}.card{padding:28px}.eyebrow{font-size:12px;font-weight:900;color:#557b5c;letter-spacing:.12em}.card h2{font-size:30px;margin:8px 0}.hint{color:#69746c;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.choice{border:2px solid #ded8cc;background:#fff;border-radius:17px;padding:16px;text-align:left;cursor:pointer;min-height:70px}.choice:hover{border-color:#557b5c}.choice.on{background:#e3eddf;border-color:#557b5c}.choice b{display:block}.field{margin:14px 0}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.field input,.field textarea{width:100%;border:2px solid #ded8cc;border-radius:14px;padding:13px;background:#fff;outline:none}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field textarea:focus{border-color:#557b5c}.actions{display:flex;gap:10px;justify-content:space-between;margin-top:22px}.btn{border:0;border-radius:14px;padding:12px 17px;background:#557b5c;color:#fff;font-weight:900;cursor:pointer}.btn.alt{background:#ebe7dd;color:#29372f}.btn.gold{background:#c99b53}.map{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}.mapitem{border:1px solid #ddd6c8;background:#fff;border-radius:15px;padding:14px;cursor:pointer;text-align:left}.mapitem.done{background:#e3eddf;border-color:#557b5c}.pts{float:right;color:#b1843d;font-weight:900;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.stat{background:#f3eee4;border-radius:15px;padding:14px}.stat strong{font-size:25px;display:block}.badge{display:inline-block;background:#f1dfb8;border-radius:999px;padding:7px 10px;margin:4px;font-size:13px;font-weight:800}.notice{padding:13px;border-radius:15px;background:#eef5eb;margin:15px 0}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,120px);background:#243129;color:white;padding:12px 18px;border-radius:999px;transition:.25s;z-index:99}.toast.show{transform:translate(-50%,0)}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fffdf9ee;border-top:1px solid #ddd6c8;padding:10px 18px;display:flex;justify-content:center;gap:10px;z-index:9}.modal{position:fixed;inset:0;background:#18231e99;display:none;align-items:flex-end;z-index:20;padding:10px}.modal.show{display:flex}.modalbox{width:min(900px,100%);max-height:90vh;overflow:auto;background:#fffdf9;border-radius:25px;padding:22px}.modalhead{display:flex;align-items:center;justify-content:space-between}@media(max-width:650px){.hero h1{font-size:30px}.grid,.map{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.topin{flex-wrap:wrap}.pill:last-of-type{display:none}.card{padding:20px}}
 </style>
 </head>
 <body>
-<div class="app">
-<header><div class="logo">🌱 理出自己</div><span class="pill" id="chapter"></span><span class="grow"></span><span class="pill" id="xp"></span><span class="pill">⭐ 自由選關＋完成得分</span><button class="btn secondary" id="mapBtn" type="button">🗺️ 關卡</button></header>
-<div class="progress"><div id="progress"></div></div>
-<main><div id="screen"></div></main>
-<nav><button class="btn secondary" id="back" type="button">← 上一步</button><button class="btn" id="next" type="button">下一關 →</button></nav>
-</div>
-<div class="modal" id="modal"><div class="modalBox"><div class="actions" style="margin-top:0"><div><div class="eyebrow">自由探索模式</div><h2>5大章 × 17關卡</h2></div><button class="btn secondary" id="close" type="button">關閉</button></div><p class="small">每一關都是一次自我探索。<b>17 關全部開放</b>，可以直接點選任何關卡，不必照順序；每關首次完成會取得對應積分。</p><div class="map" id="map"></div></div></div>
-<div class="toast" id="toast"></div>
+<header class="top"><div class="topin"><div class="logo">🌱 理出自己｜女力職涯探索</div><div class="spacer"></div><div class="pill" id="xp">⭐ 0 XP</div><div class="pill" id="done">0 / 17</div><button class="btn alt" id="openMap">🗺️ 關卡地圖</button></div><div class="progress"><div id="progress"></div></div></header>
+<main>
+<section class="hero"><div class="eyebrow">WOMEN POWER · CAREER EXPLORATION</div><h1>把自己，重新放回人生裡。</h1><p>這是一套 17 關的女力職涯探索。<b>不必照順序</b>，妳可以自由選擇想探索的關卡；每一關首次完成都能獲得 XP。</p><div class="notice">🧭 <b>玩法很簡單：</b>選關卡 → 完成任務 → 取得 XP → 解鎖徽章 → 最後生成妳的「人生脈絡地圖」。</div></section>
+<div id="app"></div>
+</main>
+<div class="bottom"><button class="btn alt" id="prev">← 上一關</button><button class="btn" id="next">完成並前往下一關 →</button></div>
+<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">自由探索模式</div><h2>17 關卡地圖</h2></div><button class="btn alt" id="closeMap">關閉</button></div><p class="hint">直接點任何關卡即可跳轉。完成後會顯示 ✓；同一關只會取得一次 XP。</p><div id="map" class="map"></div></div></div>
+<div id="toast" class="toast"></div>
 <script>
-"use strict";
+(function(){
+'use strict';
 const levels=[
-["nickname",1,1,"我是誰","先給今天的自己一個名字","text"],
-["birth",1,2,"生命靈數角色","讓一個象徵性的角色提示，陪妳探索","birth"],
-["state",1,3,"我的現在","此刻的妳，最接近哪一種狀態？","single",["有點累","有點迷惘","想很多","想改變","正在重新開始","充滿期待"]],
-["awareness",1,4,"最近的提醒","最近什麼訊號一直提醒妳：該照顧自己了？","multi",["身體累","睡不好","煩躁","焦慮","生氣","沒精神","想改變","不知道怎麼了"]],
-["radar",2,5,"覺察雷達","沒有標準答案，先聽聽現在的自己","radar"],
-["timeline",2,6,"人生回望","妳走過的路，就是能力的證據","timeline"],
-["superpower",2,7,"能力解鎖","從日常情境，看見妳早已擁有的韌力","scenario"],
-["skills",2,8,"我的超能力","把生活裡的會做，轉成職涯語言","multi",["時間管理","溝通協調","問題解決","情緒管理","資源整合","多工處理","危機應變","預算管理","規劃能力","臨場反應","同理與需求覺察","優先排序"]],
-["energy",3,9,"女力能量卡","翻開一張現在最需要的力量","energy"],
-["recover",3,10,"找回自己","妳想重新找回哪一個自己？","single",["有勇氣的我","有力量的我","有創意的我","有夢想的我"]],
-["values",3,11,"人生不只剩下應該","把真正重要的價值放回人生","multi",["自由","成長","經濟穩定","家庭","學習","創作","助人","被看見","生活品質","自我照顧"]],
-["wheel",4,12,"人生方向盤","把感覺整理成可以行動的方向","wheel"],
-["action",4,13,"夢想大，行動小","接下來7天，妳願意做哪一個小行動？","single",["整理一件卡住的事","完成一個15分鐘任務","主動詢問一個資源","為自己留一段時間","開始一個想做很久的嘗試","先休息，再重新出發"]],
-["support",4,14,"支持圈","韌力不是一個人硬撐，而是知道可以找誰","multi",["家人","朋友","同事／夥伴","社群","專業人士","學習資源","AI工具","我自己"]],
-["decision",5,15,"我的決定","選擇，是把力量拿回來","decision"],
-["reflection",5,16,"給自己的話","把今天的發現，變成一句可以帶走的話","reflection"],
-["result",5,17,"理出自我・脈絡地圖","妳的探索成果","result"]
+['我是誰','安定自己','先給今天的自己一個名字。','text',20],
+['生命靈數角色','安定自己','輸入出生日期，取得一個象徵性的生命角色。','birth',30],
+['我的現在','安定自己','此刻的妳，最接近哪一種狀態？','single',20,['有點累','有點迷惘','想很多','想改變','正在重新開始','充滿期待']],
+['最近的提醒','安定自己','最近有哪些訊號提醒妳需要照顧自己？','multi',30,['身體累','睡不好','煩躁','焦慮','生氣','沒精神','想改變','不知道怎麼了']],
+['覺察雷達','看見自己','替情緒、需求、能量、界線與渴望打分數。','radar',30],
+['人生回望','看見自己','妳走過的路，都可以成為職涯能力。','timeline',40],
+['能力解鎖','看見自己','從生活情境看見妳早已擁有的韌力。','scenario',50],
+['我的超能力','看見自己','把「我只是會做」翻譯成職涯能力。','skills',40,['時間管理','溝通協調','問題解決','情緒管理','資源整合','多工處理','危機應變','預算管理','規劃能力','同理與需求覺察','優先排序']],
+['女力能量卡','女力賦能','選一張現在最需要的力量。','energy',50],
+['找回自己','女力賦能','妳想重新找回哪一個自己？','single',30,['有勇氣的我','有力量的我','有創意的我','有夢想的我']],
+['人生不只剩下應該','女力賦能','選出妳真正想放回人生的價值。','multi',50,['自由','成長','經濟穩定','家庭','學習','創作','助人','被看見','生活品質','自我照顧']],
+['人生方向盤','築夢踏實','把感覺整理成可以行動的方向。','wheel',60],
+['夢想大，行動小','築夢踏實','接下來 7 天，妳願意做哪一個小行動？','single',50,['整理一件卡住的事','完成一個15分鐘任務','主動詢問一個資源','為自己留一段時間','開始一個想做很久的嘗試','先休息，再重新出發']],
+['支持圈','築夢踏實','知道什麼時候、向誰求助，也是一種能力。','multi',40,['家人','朋友','同事／夥伴','社群','專業人士','學習資源','AI工具','我自己']],
+['我的決定','自決人生','把今天的覺察變成一個選擇。','decision',60],
+['給自己的話','自決人生','留下未來的自己可以帶走的一句話。','reflection',60],
+['理出自我・人生脈絡地圖','自決人生','整理妳完成的探索成果。','result',100]
 ];
-const levelPoints={nickname:20,birth:30,state:20,awareness:30,radar:30,timeline:40,superpower:50,skills:40,energy:50,recover:30,values:50,wheel:60,action:50,support:40,decision:60,reflection:60,result:100};
-const energies=[
-["勇氣","🔥","我可以害怕，但仍然往前一步。","完成一件原本想拖延的小事。"],
-["韌性","🌿","我不是沒有跌倒，而是一次次重新站起來。","寫下自己曾撐過的一件事。"],
-["自信","✨","我的能力，不需要等別人認可才存在。","列出3件我做得到的事。"],
-["自在","🕊️","我不必急著成為別人期待的樣子。","替自己留15分鐘不被打擾。"],
-["創意","🎨","換一種方法，也是一種能力。","把困擾改寫成可以嘗試的問題。"],
-["夢想","🌙","人生不只剩下應該，也可以有我想要的。","寫下一個真正想要的願望。"],
-["成長","🌱","不用一次完美，只要持續靠近。","投入一個技能15分鐘。"],
-["選擇","🧭","我可以選擇，也可以重新選擇。","對一件不必要的事說一次先不要。"],
-["行動","🚀","小小行動，比完美計畫更接近夢想。","做一個5分鐘版本。"],
-["界線","🛡️","照顧自己，是為了走得更久。","說清楚一個時間或情緒界線。"],
-["溫柔","💗","我可以用對重要朋友的方式對待自己。","對自己說一句肯定的話。"],
-["支持","🤝","我不需要一個人完成所有事情。","向可信任的人提出一個具體請求。"]
-];
-const hints={1:["開創者","勇氣、自主、開始","妳可以從一個自己真正想做的決定開始。"],2:["連結者","關係、合作、感受","妳的感受與連結，是重要的導航資訊。"],3:["表達者","創意、表達、喜悅","妳可以讓創意與表達重新回到生活。"],4:["建構者","穩定、實踐、建構","妳已累積很多把事情落地的能力。"],5:["探索者","自由、探索、變化","妳可以探索新的可能，不必一次決定終身。"],6:["照顧者","照顧、責任、愛","照顧別人的同時，也別忘了把自己放回來。"],7:["思考者","思考、內在、探索","妳需要的可能不是更多答案，而是一點安靜空間。"],8:["實踐者","行動、成就、力量","妳有把想法變成成果的力量。"],9:["理想者","理想、助人、完整","妳可以助人，也讓自己成為被照顧的人。"]};
-const scenarios=[
-["child","👧","孩子突然生病，妳會怎麼處理？",["危機應變","資源整合","情緒管理"]],
-["budget","💰","月底預算不夠，妳會怎麼調整？",["預算管理","規劃能力","問題解決"]],
-["family","🏠","家人意見不同，妳會怎麼溝通？",["溝通協調","同理與需求覺察","問題解決"]],
-["multi","⏱️","一天突然塞進很多事情，妳會怎麼安排？",["時間管理","多工處理","優先排序"]]
-];
-const defaults={nickname:"",birthDate:"",lifePath:null,state:"",awareness:[],radar:{emotion:3,need:3,energy:3,boundary:3,desire:3},timeline:["","",""],keywords:[],scenario:[],skills:[],energyCard:null,recover:"",values:[],direction:{want:"",dont:"",try:"",first:""},action:"",support:[],decision:"",reflection:"",xp:0,badges:[]};
-let data;
-try{const raw=localStorage.getItem("rizi3");data=raw?JSON.parse(raw):null}catch(e){data=null}
-if(!data)data=JSON.parse(JSON.stringify(defaults));
-for(const l of levels){if(typeof data["scored_"+l[0]]!=="boolean")data["scored_"+l[0]]=false}
-const cloneDefaults=()=>JSON.parse(JSON.stringify(defaults));
-let cur=Number(localStorage.getItem("rizi3cur")||0);if(cur<0||cur>16)cur=0;
-const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-function save(){try{localStorage.setItem("rizi3",JSON.stringify(data));localStorage.setItem("rizi3cur",String(cur))}catch(e){}}
-function msg(t){$("toast").textContent=t;$("toast").classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>$("toast").classList.remove("show"),1600)}
-function xp(n){data.xp+=n;badges();save();top()}
-function awardLevel(l){if(!doneLevel(l)||l[0]==="result")return; const key="scored_"+l[0]; if(data[key])return; data[key]=true; data.xp+=levelPoints[l[0]]||10; badges(); save(); msg(`完成「${l[3]}」＋${levelPoints[l[0]]||10} XP`);}
-function badges(){const done=levels.filter((l,i)=>i>0&&i<16&&doneLevel(l)).length;const add=x=>{if(!data.badges.includes(x))data.badges.push(x)};if(data.lifePath)add("✨ 生命角色");if(data.energyCard!==null)add("🃏 女力賦能");if(done>=3)add("🌱 啟程者");if(done>=7)add("🌿 覺察者");if(done>=12)add("🌳 韌力行動者");if(done>=15)add("🏆 女力導航師")}
-function calc(v){let n=(v.match(/\d/g)||[]).reduce((a,b)=>a+Number(b),0);while(n>9)n=String(n).split("").reduce((a,b)=>a+Number(b),0);return n}
-function valid(v){const x=v.trim().replace(/[.\-]/g,"/").replace(/\s+/g,"");const m=x.match(/^(\d{4})\/(\d{1,2})\/(\d{1,2})$/);if(!m)return false;const y=+m[1],mo=+m[2],d=+m[3],dt=new Date(y,mo-1,d);return dt.getFullYear()===y&&dt.getMonth()===mo-1&&dt.getDate()===d}
-function doneLevel(l){switch(l[0]){case"nickname":return!!data.nickname;case"birth":return!!data.lifePath;case"state":return!!data.state;case"awareness":return data.awareness.length>0;case"radar":return true;case"timeline":return data.timeline.some(Boolean)||data.keywords.length>0;case"superpower":return data.scenario.length>0;case"skills":return data.skills.length>0;case"energy":return data.energyCard!==null;case"recover":return!!data.recover;case"values":return data.values.length>0;case"wheel":return Object.values(data.direction).some(Boolean);case"action":return!!data.action;case"support":return data.support.length>0;case"decision":return!!data.decision;case"reflection":return!!data.reflection;case"result":return true}return false}
-function top(){const l=levels[cur],d=levels.filter(doneLevel).length;$("chapter").textContent=`第${l[1]}章 · ${l[2]}/17`;$ ("xp").textContent=`⭐ ${data.xp} XP`;$("progress").style.width=Math.round(d/17*100)+"%";$("back").disabled=cur===0;$("next").style.display=cur===16?"none":"block"}
-function single(opts,key){return opts.map((x,i)=>`<button type="button" class="opt ${data[key]===x?"selected":""}" data-single="${i}">${esc(x)}</button>`).join("")}
-function multi(opts,key,max){return opts.map((x,i)=>`<button type="button" class="opt ${data[key].includes(x)?"selected":""}" data-multi="${i}">${esc(x)}</button>`).join("")+`<div class="small" style="grid-column:1/-1">已選 ${data[key].length} 項／最多 ${max}</div>`}
+const roles={1:['開創者','勇氣、自主、開始'],2:['連結者','關係、合作、感受'],3:['表達者','創意、表達、喜悅'],4:['建構者','穩定、實踐、建構'],5:['探索者','自由、探索、變化'],6:['照顧者','照顧、責任、愛'],7:['思考者','思考、內在、探索'],8:['實踐者','行動、成就、力量'],9:['理想者','理想、助人、完整']};
+const energies=['🔥 勇氣','🌿 韌性','✨ 自信','🕊️ 自在','🎨 創意','🌙 夢想','🌱 成長','🧭 選擇','🚀 行動','🛡️ 界線','💗 溫柔','🤝 支持'];
+const scenarios=['👧 孩子突然生病','💰 月底預算不足','🏠 家人意見不同','⏱️ 一天塞進很多事情'];
+const defaults={nickname:'',birth:'',lifePath:null,state:'',awareness:[],radar:{emotion:3,need:3,energy:3,boundary:3,desire:3},timeline:['','',''],keywords:'',skills:[],energy:null,recover:'',values:[],wheel:['','','',''],action:'',support:[],decision:'',reflection:'',scenarios:[],score:{}};
+let state;
+try{state=JSON.parse(localStorage.getItem('careerWpliState')||'null')}catch(e){state=null}
+if(!state)state=JSON.parse(JSON.stringify(defaults));
+state.score=state.score||{};
+let current=Number(localStorage.getItem('careerWpliCurrent')||0);if(current<0||current>16)current=0;
+const el=id=>document.getElementById(id);
+function save(){try{localStorage.setItem('careerWpliState',JSON.stringify(state));localStorage.setItem('careerWpliCurrent',String(current))}catch(e){}}
+function escape(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(t){el('toast').textContent=t;el('toast').classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el('toast').classList.remove('show'),1600)}
+function completed(i){const l=levels[i],t=l[3];if(t==='result')return true;if(t==='text')return !!state.nickname;if(t==='birth')return !!state.lifePath;if(t==='single')return !!state.state&&i===2||!!state.recover&&i===9||!!state.action&&i===12;if(t==='multi')return i===3?state.awareness.length>0:i===7?state.skills.length>0:i===10?state.values.length>0:state.support.length>0;if(t==='radar')return true;if(t==='timeline')return state.timeline.some(Boolean)||!!state.keywords;if(t==='scenario')return state.scenarios.length>0;if(t==='energy')return state.energy!==null;if(t==='wheel')return state.wheel.some(Boolean);if(t==='decision')return !!state.decision;if(t==='reflection')return !!state.reflection;return false}
+function award(i){if(i===16||!completed(i)||state.score[i])return;state.score[i]=true;save();toast('完成「'+levels[i][0]+'」 +'+levels[i][4]+' XP');}
+function totalXp(){return Object.keys(state.score).reduce((n,k)=>n+levels[+k][4],0)}
+function badges(){const n=Object.keys(state.score).length;const a=[];if(n>=1)a.push('🌱 啟程者');if(n>=4)a.push('🔍 覺察者');if(n>=8)a.push('🌿 韌力行動者');if(n>=12)a.push('🧭 女力導航師');if(n>=16)a.push('🏆 人生主導者');return a}
+function updateTop(){el('xp').textContent='⭐ '+totalXp()+' XP';const n=Object.keys(state.score).length;el('done').textContent=n+' / 17';el('progress').style.width=Math.round(n/17*100)+'%';el('prev').disabled=current===0;el('next').textContent=current===16?'重新整理成果':'完成並前往下一關 →'}
+function singleButtons(opts,kind){return opts.map((x,i)=>'<button class="choice '+(kind===x?'on':'')+'" data-kind="single" data-index="'+i+'"><b>'+escape(x)+'</b></button>').join('')}
+function multiButtons(opts,key,max){return opts.map((x,i)=>'<button class="choice '+(state[key]||[]).includes(x)?'on':''+'" data-kind="multi" data-index="'+i+'"><b>'+escape(x)+'</b></button>').join('')+'<div class="hint">已選 '+(state[key]||[]).length+' 項／最多 '+max+' 項</div>'}
 function render(){
- const l=levels[cur],id=l[0];let s="";
- if(id==="nickname")s=`<div class="eyebrow">CHAPTER 1 · 安定自己</div><h1>今天，先把自己放回來</h1><p>妳不需要先證明自己很厲害。先給今天的自己一個名字。</p><input id="nickname" value="${esc(data.nickname)}" placeholder="例如：小綠、Leona、我自己"><div class="scene">🌱 <b>任務：登入妳自己的人生</b><br><span class="small">這個暱稱只會保存在本機成果中。</span></div>`;
- else if(id==="birth")s=`<div class="eyebrow">CHAPTER 1 · 生命角色</div><h2>妳的生命靈數角色</h2><p>這不是診斷，而是一個讓妳開始思考自己的象徵提示。</p><input id="birth" value="${esc(data.birthDate)}" inputmode="numeric" placeholder="1981/08/23">${data.lifePath?`<div class="scene flash"><span class="badge">✨ ${hints[data.lifePath][0]} · 生命靈數 ${data.lifePath}</span><h3>${hints[data.lifePath][1]}</h3><p>${hints[data.lifePath][2]}</p></div>`:""}<div class="notice">任務：輸入出生年月日 → 解鎖妳的「生命角色」。</div>`;
- else if(id==="state")s=`<div class="eyebrow">CHAPTER 1 · 任務 03</div><h2>此刻的妳，在哪裡？</h2><div class="scene">🎯 <b>任務：替現在的自己命名</b><br><span class="small">沒有對錯，只有此刻真實的感受。</span></div><div class="grid">${single(l[5],"state")}</div>`;
- else if(id==="awareness")s=`<div class="eyebrow">CHAPTER 1 · 任務 04</div><h2>身體與情緒正在說什麼？</h2><div class="scene">🔍 <b>任務：找出最近最常出現的訊號</b></div><div class="grid">${multi(l[5],"awareness",3)}</div>`;
- else if(id==="radar"){s=`<div class="eyebrow">CHAPTER 2 · 看見自己</div><h2>覺察雷達</h2><p>${l[4]}</p>`;[["emotion","情緒"],["need","需求"],["energy","能量"],["boundary","界線"],["desire","渴望"]].forEach(x=>s+=`<div style="display:grid;grid-template-columns:70px 1fr 25px;gap:9px;align-items:center;margin:17px 0"><b>${x[1]}</b><input type="range" min="1" max="5" value="${data.radar[x[0]]}" data-range="${x[0]}"><b id="rv${x[0]}">${data.radar[x[0]]}</b></div>`);s+=`<div class="notice">🎯 任務：不是改變自己，而是先看見自己。</div>`}
- else if(id==="timeline")s=`<div class="eyebrow">CHAPTER 2 · 任務 06</div><h2>妳走過的路，都算數</h2><p>把生活經驗翻譯成職涯韌力。</p>${["我完成過的事","我撐過來的事","讓我改變的事"].map((x,i)=>`<label class="small">${x}</label><textarea data-time="${i}" placeholder="寫一件就好">${esc(data.timeline[i])}</textarea><div style="height:8px"></div>`).join("")}<label class="small">三個代表我的字</label><input id="keywords" value="${esc(data.keywords.join("、"))}" placeholder="例如：堅持、照顧、重新開始">`;
- else if(id==="superpower")s=`<div class="eyebrow">CHAPTER 2 · 韌力解鎖</div><h2>生活，是妳的職涯訓練場</h2><p>點選最像妳的情境。每一次選擇，都會解鎖能力。</p><div class="grid">${scenarios.map(x=>`<button type="button" class="opt scenario ${data.scenario.includes(x[0])?"selected":""}" data-scenario="${x[0]}"><span class="ico">${x[1]}</span><b>${x[2]}</b><span class="small">${x[3].join("・")}</span></button>`).join("")}</div><div class="tags">${data.skills.map(x=>`<span>💎 ${esc(x)}</span>`).join("")}</div>`;
- else if(id==="skills")s=`<div class="eyebrow">CHAPTER 2 · 任務 08</div><h2>把「我只是會做」變成「我具備能力」</h2><div class="grid">${multi(l[5],"skills",6)}</div>`;
- else if(id==="energy")s=`<div class="eyebrow">CHAPTER 3 · 女力賦能</div><h2>女力能量卡・翻牌</h2><p>先選一張妳現在最需要的力量，再翻開它。</p><div class="deck">${energies.map((e,i)=>`<button type="button" class="energy opt ${data.energyCard===i?"selected":""}" data-energy="${i}"><div class="energyWrap"><div class="energyInner"><div class="face"><div class="cardIcon">❔</div><b>女力能量</b><p class="small">點我翻牌</p></div><div class="face back"><div class="cardIcon">${e[1]}</div><b>${e[0]}</b><p>${e[2]}</p><p class="small">今日任務：${e[3]}</p></div></div></div></button>`).join("")}</div>`;
- else if(id==="recover")s=`<div class="eyebrow">CHAPTER 3 · 任務 10</div><h2>妳想找回哪一個自己？</h2><div class="grid">${single(l[5],"recover")}</div>`;
- else if(id==="values")s=`<div class="eyebrow">CHAPTER 3 · 任務 11</div><h2>人生，不只剩下應該</h2><div class="scene">❤️ <b>任務：選出值得重新放回人生的價值</b></div><div class="grid">${multi(l[5],"values",4)}</div>`;
- else if(id==="wheel")s=`<div class="eyebrow">CHAPTER 4 · 築夢踏實</div><h2>人生方向盤</h2>${[["want","我想要什麼？"],["dont","我不要什麼？"],["try","我願意嘗試什麼？"],["first","我決定先做什麼？"]].map(x=>`<label class="small">${x[1]}</label><textarea data-dir="${x[0]}">${esc(data.direction[x[0]])}</textarea><div style="height:9px"></div>`).join("")}`;
- else if(id==="action")s=`<div class="eyebrow">CHAPTER 4 · 任務 13</div><h2>夢想大，行動小</h2><div class="scene">🚀 <b>任務：選一個7天內真的做得到的小行動</b></div><div class="grid">${single(l[5],"action")}</div>`;
- else if(id==="support")s=`<div class="eyebrow">CHAPTER 4 · 韌力不是硬撐</div><h2>我的支持圈</h2><p>真正的韌力，不是什麼都自己扛，而是知道什麼時候、向誰求助。</p><div class="grid">${multi(l[5],"support",3)}</div>`;
- else if(id==="decision")s=`<div class="eyebrow">CHAPTER 5 · 自決</div><h2>我的決定</h2><div class="scene">🧭 <b>任務：把今天的覺察變成一個選擇</b></div><textarea id="decision" placeholder="我決定先……">${esc(data.decision)}</textarea>`;
- else if(id==="reflection")s=`<div class="eyebrow">CHAPTER 5 · 最後一關</div><h2>給自己的話</h2><p>如果未來的妳再次懷疑自己，希望今天的妳留下一句什麼？</p><textarea id="reflection" placeholder="我不是沒有能力，我只是很久沒有把自己放回人生裡。">${esc(data.reflection)}</textarea><div class="scene">🏆 完成後，妳將解鎖「理出自我・人生脈絡地圖」。</div>`;
- else s=renderResult();
- $("screen").innerHTML=`<section class="card">${s}</section>`;bind();top()
+const l=levels[current],t=l[3];let body='';
+if(t==='text')body='<div class="field"><label>妳希望我們怎麼稱呼妳？</label><input id="nickname" value="'+escape(state.nickname)+'" placeholder="例如：Leona、小綠、我自己"></div>';
+if(t==='birth')body='<div class="field"><label>出生日期</label><input id="birth" value="'+escape(state.birth)+'" placeholder="1981/08/23" inputmode="numeric"></div>'+(state.lifePath?'<div class="notice">✨ <b>'+roles[state.lifePath][0]+'</b>｜生命靈數 '+state.lifePath+'<br>'+roles[state.lifePath][1]+'</div>':'');
+if(t==='single'){let key=current===2?'state':current===9?'recover':'action';body='<div class="grid">'+singleButtons(l[5],state[key])+'</div>'}
+if(t==='multi'){let key=current===3?'awareness':current===7?'skills':current===10?'values':'support';let max=current===3?3:current===7?6:current===10?4:3;body='<div class="grid">'+multiButtons(l[5],key,max)+'</div>'}
+if(t==='radar'){body=['emotion','need','energy','boundary','desire'].map((k,i)=>'<div class="field"><label>'+['情緒','需求','能量','界線','渴望'][i]+'：<span id="r'+k+'">'+state.radar[k]+'</span></label><input type="range" min="1" max="5" value="'+state.radar[k]+'" data-range="'+k+'"></div>').join('')}
+if(t==='timeline')body=['我完成過的事','我撐過來的事','讓我改變的事'].map((x,i)=>'<div class="field"><label>'+x+'</label><textarea data-time="'+i+'">'+escape(state.timeline[i])+'</textarea></div>').join('')+'<div class="field"><label>三個代表我的字</label><input id="keywords" value="'+escape(state.keywords)+'" placeholder="堅持、照顧、重新開始"></div>';
+if(t==='scenario')body='<div class="grid">'+scenarios.map((x,i)=>'<button class="choice '+(state.scenarios.includes(i)?'on':'')+'" data-kind="scenario" data-index="'+i+'"><b>'+x+'</b><span class="hint">點選解鎖生活中的能力</span></button>').join('')+'</div><div class="notice">已解鎖：'+(state.scenarios.length?'資源整合・問題解決・時間管理・溝通協調':'尚未選擇')+'</div>';
+if(t==='energy')body='<div class="grid">'+energies.map((x,i)=>'<button class="choice '+(state.energy===i?'on':'')+'" data-kind="energy" data-index="'+i+'"><b>'+x+'</b></button>').join('')+'</div>'+(state.energy!==null?'<div class="notice">今日訊息：妳不必一次完成全部，先完成一個小步驟。</div>':'');
+if(t==='wheel')body=[['想要什麼？','我想要……'],['不要什麼？','我不要……'],['願意嘗試什麼？','我願意試……'],['先做什麼？','我決定先……']].map((x,i)=>'<div class="field"><label>'+x[0]+'</label><textarea data-wheel="'+i+'" placeholder="'+x[1]+'">'+escape(state.wheel[i])+'</textarea></div>').join('');
+if(t==='decision')body='<div class="field"><textarea id="decision" placeholder="我決定先……">'+escape(state.decision)+'</textarea></div>';
+if(t==='reflection')body='<div class="field"><textarea id="reflection" placeholder="我願意把自己重新放回人生裡。">'+escape(state.reflection)+'</textarea></div>';
+if(t==='result')body=resultHtml();
+el('app').innerHTML='<section class="card"><div class="eyebrow">第 '+(current+1)+' / 17 關 · '+l[1]+' · +'+l[4]+' XP</div><h2>'+l[0]+'</h2><p class="hint">'+l[2]+'</p>'+body+'</section>';bind();updateTop();
 }
+function resultHtml(){const b=badges();return '<div class="stats"><div class="stat"><span>總 XP</span><strong>'+totalXp()+'</strong></div><div class="stat"><span>完成</span><strong>'+Object.keys(state.score).length+'/17</strong></div><div class="stat"><span>徽章</span><strong>'+b.length+'</strong></div></div><div class="notice">🌱 '+escape(state.nickname||'我的')+'，妳已經開始把生活經驗重新整理成自己的力量。</div><p><b>生命角色：</b>'+(state.lifePath?roles[state.lifePath][0]:'—')+'<br><b>現在：</b>'+escape(state.state||'—')+'<br><b>能力：</b>'+escape((state.skills||[]).join('、')||'—')+'<br><b>價值：</b>'+escape((state.values||[]).join('、')||'—')+'<br><b>7日行動：</b>'+escape(state.action||'—')+'</p><p><b>我的決定：</b>'+escape(state.decision||'—')+'</p><div class="notice">「'+escape(state.reflection||'我願意把自己重新放回人生裡。')+'」</div>'+b.map(x=>'<span class="badge">'+x+'</span>').join('')+'<div class="actions"><button class="btn gold" id="reset">重新開始</button></div>'}
 function bind(){
- document.querySelectorAll("[data-single]").forEach(b=>b.addEventListener("click",()=>{const l=levels[cur],v=l[5][+b.dataset.single];if(l[0]==="state")data.state=v;if(l[0]==="recover")data.recover=v;if(l[0]==="action")data.action=v;save();render()}));
- document.querySelectorAll("[data-multi]").forEach(b=>b.addEventListener("click",()=>{const l=levels[cur],v=l[5][+b.dataset.multi],key=l[0],arr=data[key],max=key==="awareness"?3:key==="values"?4:key==="skills"?6:3,i=arr.indexOf(v);if(i>=0)arr.splice(i,1);else{if(arr.length>=max){msg(`最多選 ${max} 項`);return}arr.push(v)}save();render()}));
- document.querySelectorAll("[data-range]").forEach(x=>x.addEventListener("input",()=>{data.radar[x.dataset.range]=+x.value;$("rv"+x.dataset.range).textContent=x.value;save()}));
- document.querySelectorAll("[data-time]").forEach(x=>x.addEventListener("input",()=>{data.timeline[+x.dataset.time]=x.value;save()}));
- const kw=$("keywords");if(kw)kw.addEventListener("input",()=>{data.keywords=kw.value.split(/[、,，\s]+/).filter(Boolean).slice(0,3);save()});
- document.querySelectorAll("[data-scenario]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.scenario,sc=scenarios.find(x=>x[0]===id),i=data.scenario.indexOf(id);if(i>=0){data.scenario.splice(i,1);sc[3].forEach(sk=>{if(!data.scenario.some(q=>scenarios.find(z=>z[0]===q)?.[3].includes(sk))){const j=data.skills.indexOf(sk);if(j>=0)data.skills.splice(j,1)}})}else{data.scenario.push(id);sc[3].forEach(sk=>{if(!data.skills.includes(sk))data.skills.push(sk)})}save();render()}));
- document.querySelectorAll("[data-energy]").forEach(b=>b.addEventListener("click",()=>{data.energyCard=+b.dataset.energy;save();render();setTimeout(()=>{const x=document.querySelector(`[data-energy="${b.dataset.energy}"]`);if(x)x.classList.add("flipped")},30)}));
- document.querySelectorAll("[data-dir]").forEach(x=>x.addEventListener("input",()=>{data.direction[x.dataset.dir]=x.value;save()}));
- const n=$("nickname");if(n)n.addEventListener("input",()=>{data.nickname=n.value.trim();save()});
- const bi=$("birth");if(bi)bi.addEventListener("input",()=>save());
- const de=$("decision");if(de)de.addEventListener("input",()=>{data.decision=de.value;save()});
- const re=$("reflection");if(re)re.addEventListener("input",()=>{data.reflection=re.value;save()});
+const app=el('app');app.onclick=function(e){const b=e.target.closest('[data-kind]');if(!b)return;const l=levels[current],kind=b.dataset.kind,i=+b.dataset.index;if(kind==='single'){const key=current===2?'state':current===9?'recover':'action';state[key]=l[5][i]}if(kind==='multi'){const key=current===3?'awareness':current===7?'skills':current===10?'values':'support';const max=current===3?3:current===7?6:current===10?4:3;const v=l[5][i],arr=state[key];const p=arr.indexOf(v);if(p>=0)arr.splice(p,1);else if(arr.length<max)arr.push(v);else{toast('最多選 '+max+' 項');return}}if(kind==='scenario'){const p=state.scenarios.indexOf(i);if(p>=0)state.scenarios.splice(p,1);else state.scenarios.push(i)}if(kind==='energy')state.energy=i;save();render()};
+['nickname','birth','keywords','decision','reflection'].forEach(id=>{const x=el(id);if(x)x.addEventListener('input',()=>{if(id==='nickname')state.nickname=x.value;if(id==='birth')state.birth=x.value;if(id==='keywords')state.keywords=x.value;if(id==='decision')state.decision=x.value;if(id==='reflection')state.reflection=x.value;save()})});document.querySelectorAll('[data-range]').forEach(x=>x.addEventListener('input',()=>{state.radar[x.dataset.range]=+x.value;el('r'+x.dataset.range).textContent=x.value;save()}));document.querySelectorAll('[data-time]').forEach(x=>x.addEventListener('input',()=>{state.timeline[+x.dataset.time]=x.value;save()}));document.querySelectorAll('[data-wheel]').forEach(x=>x.addEventListener('input',()=>{state.wheel[+x.dataset.wheel]=x.value;save()}));const r=el('reset');if(r)r.addEventListener('click',()=>{if(confirm('確定重新開始嗎？')){state=JSON.parse(JSON.stringify(defaults));current=0;save();render()}})
 }
-function validate(){
- const id=levels[cur][0];
- if(id==="nickname"){data.nickname=$("nickname").value.trim();if(!data.nickname){msg("請先輸入暱稱");return false}}
- if(id==="birth"){const v=$("birth").value.trim();if(!valid(v)){msg("請輸入正確日期，例如 1981/08/23");return false}data.birthDate=v.replace(/[.\-]/g,"/");data.lifePath=calc(data.birthDate);badges()}
- if(id==="timeline"){document.querySelectorAll("[data-time]").forEach(x=>data.timeline[+x.dataset.time]=x.value);const k=$("keywords");if(k)data.keywords=k.value.split(/[、,，\s]+/).filter(Boolean).slice(0,3)}
- if(id==="wheel")document.querySelectorAll("[data-dir]").forEach(x=>data.direction[x.dataset.dir]=x.value);
- if(id==="decision")data.decision=$("decision").value.trim();
- if(id==="reflection")data.reflection=$("reflection").value.trim();
- return true
-}
-function next(){if(!validate())return;if(cur<16){awardLevel(levels[cur]);cur++;save();render();scrollTo(0,0)}else{awardLevel(levels[cur]);render()}}
-function back(){if(cur>0){validate();cur--;save();render();scrollTo(0,0)}}
-function renderMap(){$("map").innerHTML=`<div class="freeNote" style="grid-column:1/-1">🧭 <b>自由選關</b>：直接點任何關卡即可跳轉。已完成的關卡會顯示 ✓，同一關不會重複計分。</div><div class="scoreGuide" style="grid-column:1/-1"><span class="scoreChip">20–30 XP 入門</span><span class="scoreChip">40–50 XP 能力</span><span class="scoreChip">60 XP 深度</span><span class="scoreChip">100 XP 終章</span></div>`+levels.map((l,i)=>`<button type="button" class="mapBtn ${doneLevel(l)?"done":""} ${i===cur?"flash":""}" data-go="${i}"><b>${l[2]}. ${l[3]} ${doneLevel(l)?"✓":""}</b><span class="mapPts">+${levelPoints[l[0]]} XP</span><small class="small">第${l[1]}章 · ${l[4]}</small></button>`).join("");document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{cur=+b.dataset.go;save();closeMap();render();scrollTo(0,0)}))}
-function openMap(){renderMap();$("modal").classList.add("show")}function closeMap(){$("modal").classList.remove("show")}
-function renderResult(){
- badges();const h=data.lifePath?hints[data.lifePath]:["探索者","尚未輸入",""];return `<div class="resultMap" id="resultMap"><div class="eyebrow">FINAL · 17/17</div><div class="hero">${esc(data.nickname||"我的")}・理出自我</div><p class="small">女力職涯 × 韌力 × 自我導航</p><div class="line"></div><div class="stats"><div class="stat"><span class="small">生命角色</span><b>${data.lifePath||"—"}</b></div><div class="stat"><span class="small">XP</span><b>${data.xp}</b></div><div class="stat"><span class="small">已完成</span><b>${levels.filter(doneLevel).length}/17</b></div><div class="stat"><span class="small">徽章</span><b>${data.badges.length}</b></div></div>
- <div class="chapterTitle">🌱 安定自己</div><p>現在：${esc(data.state||"—")}<br>覺察：${data.awareness.map(esc).join("、")||"—"}</p>
- <div class="chapterTitle">🔍 看見自己</div><p>超能力：${data.skills.map(x=>esc(x)).join("、")||"—"}<br>人生關鍵字：${data.keywords.map(esc).join("、")||"—"}</p>
- <div class="chapterTitle">🃏 找回女力</div><p>生命角色：<b>${esc(h[0])}</b>｜${esc(h[1])}<br>找回：${esc(data.recover||"—")}<br>價值：${data.values.map(esc).join("、")||"—"}<br>能量卡：${data.energyCard!==null?esc(energies[data.energyCard][0]):"—"}</p>
- <div class="chapterTitle">🧭 築夢踏實</div><p><b>想要：</b>${esc(data.direction.want||"—")}<br><b>不想要：</b>${esc(data.direction.dont||"—")}<br><b>願意試：</b>${esc(data.direction.try||"—")}<br><b>先做：</b>${esc(data.direction.first||"—")}<br><b>7日行動：</b>${esc(data.action||"—")}</p>
- <div class="chapterTitle">🏆 自決人生</div><p><b>支持：</b>${data.support.map(esc).join("、")||"—"}<br><b>我的決定：</b>${esc(data.decision||"—")}</p>
- <div class="line"></div><p class="quote">「${esc(data.reflection||"我願意把自己重新放回人生裡。")}」</p><div class="line"></div><div>${data.badges.map(x=>`<span class="badge">${esc(x)}</span>`).join("")}</div></div><div class="actions"><button class="btn gold" type="button" id="export">📸 輸出1080×1920脈絡地圖</button><button class="btn secondary" type="button" id="restart">重新開始</button></div>`}
-function exportMap(){
- const W=1080,H=1920,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");x.fillStyle="#f5f0e7";x.fillRect(0,0,W,H);x.fillStyle="#29372f";x.font="900 52px sans-serif";x.fillText("理出自己｜女力職涯探索",60,90);x.font="900 40px sans-serif";x.fillText(`${data.nickname||"我的"}・人生脈絡地圖`,60,150);x.font="24px sans-serif";let y=225;const lines=[
- `生命角色：${data.lifePath||"—"} ${data.lifePath?hints[data.lifePath][0]:""}`,
- `現在：${data.state||"—"}`,`覺察：${data.awareness.join("、")||"—"}`,
- `超能力：${data.skills.join("、")||"—"}`,`能量卡：${data.energyCard!==null?energies[data.energyCard][0]:"—"}`,
- `找回自己：${data.recover||"—"}`,`價值：${data.values.join("、")||"—"}`,
- `想要：${data.direction.want||"—"}`,`不想要：${data.direction.dont||"—"}`,
- `願意試：${data.direction.try||"—"}`,`先做：${data.direction.first||"—"}`,
- `7日行動：${data.action||"—"}`,`支持：${data.support.join("、")||"—"}`,
- `我的決定：${data.decision||"—"}`,`給自己的話：${data.reflection||"我願意把自己重新放回人生裡。"}`,
- `XP：${data.xp}　徽章：${data.badges.join("、")||"探索中"}`
- ];for(const t of lines){const a=t.match(/.{1,30}/g)||[""];for(const q of a){x.fillText(q,60,y);y+=46}y+=15}x.font="italic 25px sans-serif";x.fillText("每一次重新選擇，都是女力韌性的證明。",60,1840);c.toBlob(b=>{if(!b){msg("圖片輸出失敗，請改用瀏覽器截圖");return}const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="理出自己_1080x1920_人生脈絡地圖.png";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)})
-}
-function restart(){if(confirm("確定重新開始嗎？")){data=cloneDefaults();for(const l of levels)data["scored_"+l[0]]=false;cur=0;save();render()}}
-$("next").addEventListener("click",next);$("back").addEventListener("click",back);$("mapBtn").addEventListener("click",openMap);$("close").addEventListener("click",closeMap);$("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeMap()});
-document.addEventListener("click",e=>{if(e.target.id==="export")exportMap();if(e.target.id==="restart")restart()});
-try{render()}catch(e){console.error("App initialization failed:",e);$("screen").innerHTML='<section class="card"><h2>網站初始化失敗</h2><p>請重新整理頁面；若仍無法使用，請清除本網站的瀏覽器資料後再試。</p><p class="small">錯誤：'+esc(e.message||e)+'</p></section>'}
+function goNext(){if(current===0){state.nickname=(el('nickname')||{}).value?.trim()||state.nickname;if(!state.nickname){toast('請先輸入暱稱');return}}if(current===1){const v=(el('birth')||{}).value?.trim()||state.birth;if(!/^\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}$/.test(v)){toast('請輸入日期，例如 1981/08/23');return}state.birth=v;let n=(v.match(/\d/g)||[]).reduce((a,b)=>a+Number(b),0);while(n>9)n=String(n).split('').reduce((a,b)=>a+Number(b),0);state.lifePath=n;save();render();return}if(current<16){award(current);current++;save();render();scrollTo(0,0)}else{render();toast('成果已整理完成')}}
+function goPrev(){if(current>0){current--;save();render();scrollTo(0,0)}}
+function openMap(){const map=el('map');map.innerHTML=levels.map((l,i)=>'<button class="mapitem '+(completed(i)?'done':'')+'" data-go="'+i+'"><span class="pts">+'+l[4]+' XP</span><b>'+(i+1)+'. '+l[0]+'</b><br><span class="hint">'+l[1]+' '+(completed(i)?'✓ 已完成':'')+'</span></button>').join('');el('modal').classList.add('show');map.onclick=e=>{const b=e.target.closest('[data-go]');if(b){current=+b.dataset.go;el('modal').classList.remove('show');save();render();scrollTo(0,0)}}}
+el('next').addEventListener('click',goNext);el('prev').addEventListener('click',goPrev);el('openMap').addEventListener('click',openMap);el('closeMap').addEventListener('click',()=>el('modal').classList.remove('show'));el('modal').addEventListener('click',e=>{if(e.target.id==='modal')el('modal').classList.remove('show')});
+render();
+})();
 </script>
 </body>
 </html>
